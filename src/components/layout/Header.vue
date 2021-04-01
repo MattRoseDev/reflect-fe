@@ -1,15 +1,11 @@
 <template>
-  <Header />
+  <header>Reflect</header>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Header from "@/components/layout/Header.vue";
 
 export default defineComponent({
-  name: "Home",
-  components: {
-    Header,
-  },
+  name: "Header",
 });
 </script>
