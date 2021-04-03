@@ -5,6 +5,7 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import { defaultClient } from "@/apollo";
+import "@/assets/tailwind.css";
 
 createApp({
   setup() {
