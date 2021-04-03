@@ -1,0 +1,11 @@
+.input-container {
+  @apply w-full rounded-lg border border-gray-200 overflow-hidden;
+}
+
+input {
+  @apply w-full rounded-lg border-0;
+  font-size: 0.75rem;
+  padding: 5px 12px;
+  line-height: 25px;
+  outline: none;
+}
