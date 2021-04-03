@@ -1,10 +1,8 @@
 <style src="./style.css" scoped></style>
 <template>
-  <div>
-    <button :type="type" :class="className">
-      <slot></slot>
-    </button>
-  </div>
+  <router-link class="link" :to="to" :class="className">
+    <slot></slot>
+  </router-link>
 </template>
 
 <script lang="ts">
@@ -12,9 +10,9 @@ import { defineComponent } from "vue";
 // import type { ButtonType } from './@types'
 
 export default defineComponent({
-  name: "Button",
+  name: "Link",
   props: {
-    type: String, //as () => ButtonType,
+    to: String, //as () => ButtonType,
     className: String,
   },
 });
