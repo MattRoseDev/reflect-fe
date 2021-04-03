@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import type { InputType } from './@types/index'
+import type { InputType } from './@types'
 
 export default defineComponent({
   name: "Input",

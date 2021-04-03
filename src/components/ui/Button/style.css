@@ -1,0 +1,6 @@
+button {
+  @apply w-full rounded-lg border-0 overflow-hidden font-bold py-1.5;
+  font-size: 0.85rem;
+  line-height: 25px;
+  outline: none;
+}

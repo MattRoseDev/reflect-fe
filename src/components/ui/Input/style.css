@@ -3,9 +3,8 @@
 }
 
 input {
-  @apply w-full rounded-lg border-0;
+  @apply w-full rounded-lg border-0 py-1.5 px-3;
   font-size: 0.75rem;
-  padding: 5px 12px;
   line-height: 25px;
   outline: none;
 }
