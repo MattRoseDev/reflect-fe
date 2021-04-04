@@ -3,3 +3,7 @@
   font-size: 0.9rem;
   outline: none;
 }
+
+.link:hover {
+  @apply underline;
+}

@@ -4,7 +4,7 @@
 
 input {
   @apply w-full rounded-lg border-0 py-1.5 px-3;
-  font-size: 0.75rem;
+  font-size: 14px;
   line-height: 25px;
   outline: none;
 }
