@@ -1,7 +1,12 @@
 <style src="./style.css" scoped></style>
 <template>
   <div class="input-container" :class="className">
-    <input :type="type" :placeholder="placeholder" />
+    <input
+      :type="type"
+      :placeholder="placeholder"
+      :value="value"
+      @input="$emit('update:value', $event.target.value)"
+    />
   </div>
 </template>
 
@@ -12,9 +17,23 @@ import type { InputType } from './@types'
 export default defineComponent({
   name: "Input",
   props: {
-    type: String as () => InputType,
-    placeholder: String,
-    className: String
+    type: {
+      type: String as () => InputType,
+      required: true
+    },
+    placeholder: {
+      type: String,
+      required: false
+    },
+    value: {
+      type: String,
+      required: true
+    },
+    className: {
+      type: String,
+      required: false
+    },
+
   },
 });
 </script>
