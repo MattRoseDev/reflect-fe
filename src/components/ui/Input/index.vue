@@ -1,12 +1,16 @@
 <style src="./style.css" scoped></style>
 <template>
-  <div class="input-container" :class="className">
-    <input
-      :type="type"
-      :placeholder="placeholder"
-      :value="value"
-      @input="$emit('update:value', $event.target.value)"
-    />
+  <div :class="className">
+    <label v-if="!!label" :for="id">{{ label }}</label>
+    <div class="mt-1">
+      <input
+        :type="type"
+        :id="id"
+        :value="value"
+        @input="$emit('update:value', $event.target.value)"
+        :placeholder="placeholder"
+      />
+    </div>
   </div>
 </template>
 
@@ -22,6 +26,14 @@ export default defineComponent({
       required: true
     },
     placeholder: {
+      type: String,
+      required: false
+    },
+    id: {
+      type: String,
+      required: false
+    },
+    label: {
       type: String,
       required: false
     },
