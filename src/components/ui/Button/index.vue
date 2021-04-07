@@ -1,10 +1,9 @@
 <style src="./style.css" scoped></style>
 <template>
-  <div>
-    <button :type="type" :class="className">
-      <slot></slot>
-    </button>
-  </div>
+  <button :type="type" :class="className" class="">
+    <div v-if="loading">Loading ...</div>
+    <slot v-if="!loading"></slot>
+  </button>
 </template>
 
 <script lang="ts">
@@ -16,6 +15,7 @@ export default defineComponent({
   props: {
     type: String as () => ButtonType,
     className: String,
+    loading: Boolean,
   },
 });
 </script>
