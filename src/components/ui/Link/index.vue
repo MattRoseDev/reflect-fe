@@ -7,12 +7,11 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-// import type { ButtonType } from './@types'
 
 export default defineComponent({
   name: "Link",
   props: {
-    to: String, //as () => ButtonType,
+    to: String,
     className: String,
   },
 });
