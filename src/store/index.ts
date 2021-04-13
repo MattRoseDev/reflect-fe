@@ -1,5 +1,5 @@
 import { InjectionKey } from "vue";
-import { createStore, Store } from "vuex";
+import { createStore, Store, useStore } from "vuex";
 import type { State }from "./state/@types";
 import { state } from "./state";
 import { mutations } from "./mutations";
@@ -11,3 +11,7 @@ export const store = createStore<State>({
   state,
   mutations,
 });
+
+export const appStore = () => {
+  return useStore(key)
+}
