@@ -3,7 +3,7 @@ import App from "./App.vue";
 import { DefaultApolloClient } from "@vue/apollo-composable";
 import "./registerServiceWorker";
 import router from "./router";
-import store from "./store";
+import { store, key } from "./store";
 import { defaultClient } from "@/apollo";
 import "@/assets/css/tailwind.css";
 
@@ -15,6 +15,6 @@ createApp({
     return h(App);
   },
 })
-  .use(store)
+  .use(store, key)
   .use(router)
   .mount("#app");
