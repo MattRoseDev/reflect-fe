@@ -18,3 +18,24 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const REGISTER = gql`
+  mutation register($fullname: String!, $email: String!, $password: String!) {
+    register(
+      input: { fullname: $fullname, email: $email, password: $password }
+    ) {
+      user {
+        id
+        username
+        email
+        fullname
+        bio
+        admin
+        createdAt
+        updatedAt
+        deletedAt
+      }
+      token
+    }
+  }
+`;
