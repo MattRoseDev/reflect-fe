@@ -1,7 +1,7 @@
 <style src="./style.css" scoped></style>
 <template>
   <form class="login-container" v-on:submit.prevent="login">
-    <Logo />
+    <Logo className="mx-10 mb-10 mt-3 text-center" />
     <div v-if="errorMessage.length > 0" class="rounded-md bg-red-50 p-2.5 mb-3">
       <div class="flex">
         <div class="flex-shrink-0">
@@ -95,9 +95,11 @@ export default defineComponent({
     onResult(() => {
       if (result.value) {
         const {
-          login: { user },
+          login: { user, token },
         } = result.value;
-        store.commit("SET_USER", user);
+        store.commit("SET_USER", { user, token, loggedIn: true });
+        localStorage.setItem("token", JSON.stringify(token));
+        localStorage.setItem("user", JSON.stringify(user));
         router.push("/");
       }
     });

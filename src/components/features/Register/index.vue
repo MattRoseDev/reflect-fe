@@ -1,7 +1,7 @@
 <style src="./style.css" scoped></style>
 <template>
   <form class="register-container" v-on:submit.prevent="register">
-    <Logo />
+    <Logo className="mx-10 mb-10 mt-3 text-center" />
     <div v-if="errorMessage.length > 0" class="rounded-md bg-red-50 p-2.5 mb-3">
       <div class="flex">
         <div class="flex-shrink-0">
@@ -74,13 +74,9 @@ export default defineComponent({
     const email = ref("");
     const password = ref("");
 
-    const {
-      error,
-      mutate,
-      onDone,
-      onError,
-      loading: loginLoading,
-    } = useMutation(REGISTER);
+    const { error, mutate, onError, loading: loginLoading } = useMutation(
+      REGISTER
+    );
 
     const loading = ref(false);
     watch(loginLoading, function() {
@@ -101,9 +97,11 @@ export default defineComponent({
       });
       if (result.data) {
         const {
-          register: { user },
+          register: { user, token },
         } = result.data;
-        store.commit("SET_USER", user);
+        store.commit("SET_USER", { user, token, loggedIn: true });
+        localStorage.setItem("token", JSON.stringify(token));
+        localStorage.setItem("user", JSON.stringify(user));
         router.push("/");
       }
     };

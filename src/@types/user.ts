@@ -2,7 +2,7 @@ export type User = {
   id: string;
   username: string;
   email: string;
-  Fullname: string;
+  fullname: string;
   bio: string;
   admin: boolean;
 };
