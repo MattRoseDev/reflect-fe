@@ -1,0 +1,3 @@
+.app-container {
+  @apply flex flex-row h-screen max-w-6xl mx-auto;
+}

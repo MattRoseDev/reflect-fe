@@ -1,5 +1,5 @@
 import { createApp, h, provide } from "vue";
-import App from "./App.vue";
+import App from "./app/index.vue";
 import { DefaultApolloClient } from "@vue/apollo-composable";
 import "./registerServiceWorker";
 import router from "./router";
