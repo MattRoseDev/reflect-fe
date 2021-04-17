@@ -30,7 +30,7 @@ import { defineComponent } from "vue";
 import { CogIcon, BellIcon, HomeIcon } from "@heroicons/vue/outline";
 
 export default defineComponent({
-  name: "NavigationFeature",
+  name: "NavigationComponent",
   components: {
     CogIcon,
     BellIcon,
