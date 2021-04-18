@@ -1,6 +1,6 @@
 <template>
-  <div class="hidden lg:flex lg:items-start lg:py-5">
-    <div class="flex flex-col w-72 shadow bg-white rounded-lg">
+  <div class="hidden lg:flex lg:items-start lg:py-5 h-full">
+    <div class="flex flex-col w-72 shadow bg-white rounded-lg top-0 sticky">
       <div
         class="flex items-center px-5 py-4 font-bold border-b boder-gray-900"
       >
@@ -38,6 +38,7 @@ import SearchInput from "./components/SearchInput/index.vue";
 import { appStore } from "@/store";
 
 export default defineComponent({
+  name: "SidebarFeature",
   components: {
     SearchInput,
     Avatar,
