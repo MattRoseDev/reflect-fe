@@ -1,10 +1,4 @@
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloLink,
-  split,
-} from "@apollo/client/core";
-import { setContext } from "@apollo/client/link/context";
+import { ApolloClient, InMemoryCache, ApolloLink } from "@apollo/client/core";
 import { API_URL } from "@/common/config";
 import { createUploadLink } from "apollo-upload-client";
 
@@ -14,15 +8,14 @@ const httpLink = createUploadLink({
   uri: API_URL,
 });
 
-const authLink = setContext((_, { headers }) => {
+const authLink = new ApolloLink((operation, forward) => {
   const token = JSON.parse(localStorage.getItem("token") || "");
-  console.log(headers);
-  return {
+  operation.setContext({
     headers: {
-      ...headers,
-      token: token || "",
+      token,
     },
-  };
+  });
+  return forward(operation);
 });
 
 const link = ApolloLink.from([authLink, httpLink]);
